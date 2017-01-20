@@ -75,15 +75,15 @@ html="<html><body>Click <a href="{{.URL}}">here</a></body></html>)
 
 #### gophish.api.templates.get(template_id=None)
 
-Gets the details for one or more landing templates. To get a particular template, set the ID to the template ID.
+Gets the details for one or more templates. To get a particular template, set the ID to the template ID.
 
-If the `template_id` is not set, all landing templates owned by the current user will be returned.
+If the `template_id` is not set, all templates owned by the current user will be returned.
 
 **Returns**
 
-* If the `template` is set: `models.Page`
+* If the `template` is set: `models.Template`
 
-* If `template_id` is `None`: `list(models.Page)`
+* If `template_id` is `None`: `list(models.Template)`
 
 #### gophish.api.templates.post(template)
 
