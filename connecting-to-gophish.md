@@ -6,7 +6,7 @@ By default, the API client will try connecting to the host at `http://localhost:
 
 ## Changing the Host
 
-To change the host, simply set the host parameter:
+To change the host, simply set the host parameter to point to the admin interface on your Gophish instance:
 
 ``` python
 from gophish import Gophish
