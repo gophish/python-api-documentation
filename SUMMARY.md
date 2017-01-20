@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Campaigns](campaigns.md)
-* Groups
+* [Groups](groups.md)
 * Landing Pages
 * Templates
 * Sending Profiles
