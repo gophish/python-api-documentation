@@ -7,6 +7,7 @@ The groups endpoint allows you to create, view, and manage Gophish groups.
 * [Quick Example](#quick-example)
 * [Models](#models)
 * [Methods](#methods)
+* [Examples](#examples)
 
 ## Quick Example
 
@@ -95,7 +96,7 @@ The `gophish.models.Group` object that was created.
 
 #### gophish.api.groups.put(group)
 
-Edits an existing group. This endpoint requires you to submit a existing `gophish.models.Group` object with its `id` attribute set correctly.
+Edits an existing group. This endpoint requires you to submit an existing `gophish.models.Group` object with its `id` attribute set correctly.
 
 **Returns**
 
