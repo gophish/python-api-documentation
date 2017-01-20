@@ -49,7 +49,7 @@ Example:
 ``` python
 from gophish.models import *
 
-smtp = SMTP(
+todo
 ```
 
 ### Methods
