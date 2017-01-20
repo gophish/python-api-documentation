@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [Connecting to Gophish](connecting-to-gophish.md)
 * [Campaigns](campaigns.md)
 * [Groups](groups.md)
 * [Templates](templates.md)
