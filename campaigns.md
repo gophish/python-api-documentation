@@ -7,6 +7,7 @@ The campaigns endpoint allows you to create, view, and manage Gophish campaigns.
 * [Quick Example](#quick-example)
 * [Models](#models)
 * [Methods](#methods)
+* [Examples](#examples)
 
 ## Quick Example
 
