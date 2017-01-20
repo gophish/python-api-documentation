@@ -1,5 +1,7 @@
 #Landing Pages
 
+Landing pages contain the HTML that is rendered when a target clicks on a Gophish phishing link.
+
 The pages endpoint allows you to create, view, and manage Gophish landing pages.
 
 ## Table of Contents
@@ -34,7 +36,6 @@ A page contains one or more `models.User` objects. The page name must be unique.
 * `id` (int) The page ID
 * `html` (str) The page HTML
 * `name` (str) The page name
-* `created_date` (optional: datetime.datetime) The page creation date
 * `modified_date` (optional: datetime.datetime) The scheduled time for page launch
 * `capture_credentials` (bool default:False) Whether or not the landing page should capture credentials
 * `capture_passwords` (bool default:False) Whether or not the landing page should capture passwords

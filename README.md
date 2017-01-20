@@ -26,4 +26,3 @@ api = Gophish(api_key)
 ```
 
 Now you're ready to start using the API! You can find all the detailed information for the `Gophish` class and the different endpoints below.
-

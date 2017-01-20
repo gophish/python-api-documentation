@@ -53,7 +53,6 @@ A group contains one or more `models.User` objects. The group name must be uniqu
 * `id` (int) The group ID
 * `targets` (list(models.User)) The group's users
 * `name` (str) The group name
-* `created_date` (optional: datetime.datetime) The group creation date
 * `modified_date` (optional: datetime.datetime) The scheduled time for group launch
 
 ##### Methods
