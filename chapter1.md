@@ -2,7 +2,13 @@
 
 The campaigns endpoint allows you to create, view, and manage Gophish campaigns.
 
-### Quick Example
+## Table of Contents
+
+* [Quick Example](#quick-example)
+* [Models](#models)
+* [Methods](#methods)
+
+## Quick Example
 
 This example shows how to retrieve the names of every campaign launched in Gophish.
 
@@ -16,11 +22,11 @@ for campaign in api.campaigns.get():
     print campaign.name
 ```
 
-#### Models
+### Models
 
-##### gophish.models.Result
+#### gophish.models.Result
 
-###### Attributes
+##### Attributes
 
  * `id` (int) The result ID
  * `first_name` (str) The first name
@@ -31,7 +37,7 @@ for campaign in api.campaigns.get():
  * `latitude` (float) The latitude of the `ip`
  * `longitude` (float) The longitude of the `ip`
  
-###### Methods
+##### Methods
 
  * `__init__(self, **kwargs)` - Returns a new Result
  
@@ -43,13 +49,13 @@ for campaign in api.campaigns.get():
      position='Tester', email='foo.bar@example.com')
 ```
  
-##### gophish.models.Campaign
+#### gophish.models.Campaign
 
 For each of the attributes in the campaign (groups, template, page, etc.), Gophish **only cares about the `name`**.
 
 This means that you don't have to fetch the resources you want to use. You can simply create new ones with the correct name for the campaign (see the example below).
 
-###### Attributes
+##### Attributes
 
  * `id` (int) The result ID
  * `results` (list(models.Result)) The campaign results
@@ -62,7 +68,7 @@ This means that you don't have to fetch the resources you want to use. You can s
  * `smtp` (models.SMTP) The SMTP Profile to use when sending emails
  * `url` (str) The URL to use when constructing links in phishing emails
  
-###### Methods
+##### Methods
 
  * `__init__(self, **kwargs)` - Returns a new Campaign
  
@@ -80,9 +86,9 @@ campaign = Campaign(
     template=template, profile=profile)
 ```
 
-#### Methods
+### Methods
 
-##### gophish.api.campaigns.get(campaign_id=None)
+#### gophish.api.campaigns.get(campaign_id=None)
 
 Gets the details for one or more campaigns. To get a particular campaign, set the ID to the campaign ID.
 
@@ -94,7 +100,7 @@ If the `campaign_id` is not set, all campaigns owned by the current user will be
 
 * If `campaign_id` is `None`: `list(models.Campaign)`
 
-##### gophish.api.campaigns.post(campaign)
+#### gophish.api.campaigns.post(campaign)
 
 Creates and launches a new campaign. This endpoint requires you to submit a `gophish.models.Campaign` object.
 
@@ -102,7 +108,7 @@ Creates and launches a new campaign. This endpoint requires you to submit a `gop
 
 The `gophish.models.Campaign` object that was created.
 
-##### gophish.api.campaigns.delete(campaign_id)
+#### gophish.api.campaigns.delete(campaign_id)
 
 Deletes the campaign specified by `campaign_id`.
 
@@ -110,7 +116,7 @@ Deletes the campaign specified by `campaign_id`.
 
 A `gophish.models.Status` message.
 
-#### Examples
+### Examples
 
 Here are some examples to show how to use the API.
 
@@ -124,19 +130,19 @@ api_key = 'API_KEY'
 api = Gophish(api_key)
 ```
 
-##### Get All Campaigns
+#### Get All Campaigns
 
 ``` python
 campaigns = api.campaigns.get()
 ```
 
-##### Get Single Campaign
+#### Get Single Campaign
 
 ``` python
 campaign = api.campaigns.get(campaign_id=1)
 ```
 
-##### Create New Campaign
+#### Create New Campaign
 
 ``` python
 groups = [Group(name='Existing Group')]
@@ -152,4 +158,4 @@ campaign = api.campaigns.post(campaign)
 print campaign.id
 ```
 
-##### Get Campaign Summaries
+#### Get Campaign Summaries
