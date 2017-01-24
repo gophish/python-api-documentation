@@ -10,7 +10,7 @@ To interface with Gophish using Python, we've created a `gophish` client library
 
 To install the `gophish` library, simply run the command:
 
-[todo]
+`pip install gophish`
 
 ## Quickstart
 
