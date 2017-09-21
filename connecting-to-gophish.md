@@ -8,7 +8,7 @@ By default, the API client will try connecting to the host at `http://localhost:
 
 To change the host, simply set the host parameter to point to the admin interface on your Gophish instance:
 
-``` python
+```python
 from gophish import Gophish
 
 api = Gophish(API_KEY, host='http://admin_server')
@@ -20,8 +20,11 @@ All custom `kwargs` are sent to the underlying transport, which by default is th
 
 This means it's easy to customize client behavior. For example, if you are using self-signed certificates with Gophish, you can ignore the warnings by setting `verify=False`.
 
-``` python
+```python
 from gophish import Gophish
 
-api = Gophish(API_KEY, host='http://admin_server', verify=False)
+api = Gophish(API_KEY, host='https://admin_server', verify=False)
 ```
+
+
+
