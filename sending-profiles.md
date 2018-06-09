@@ -6,10 +6,10 @@ The SMTP endpoint allows you to create, view, and manage Gophish sending profile
 
 ## Table of Contents
 
-* [Quick Example](#quick-example)
-* [Models](#models)
-* [Methods](#methods)
-* [Examples](#examples)
+* [Quick Example](sending-profiles.md#quick-example)
+* [Models](sending-profiles.md#models)
+* [Methods](sending-profiles.md#methods)
+* [Examples](sending-profiles.md#examples)
 
 ## Quick Example
 
@@ -31,7 +31,7 @@ for smtp in api.smtp.get():
 
 A sending profile contains the server address/port, and optional credentials.
 
-##### Attributes
+**Attributes**
 
 * `id` \(int\) The smtp ID
 * `name` \(str\) The smtp name
@@ -41,7 +41,7 @@ A sending profile contains the server address/port, and optional credentials.
 * `ignore_cert_errors` \(bool\) Whether or not to ignore SSL certificate validation errors \(set to `true` in the case of self-signed certificates\)
 * `modified_date` \(optional: datetime.datetime\) The datetime this SMTP profile was previously modified
 
-##### Methods
+**Methods**
 
 * `__init__(self, **kwargs)` - Returns a new SMTP object
 
@@ -56,7 +56,6 @@ If the `smtp_id` is not set, all sending profiles owned by the current user will
 **Returns**
 
 * If the `smtp_id` is set: `models.SMTP`
-
 * If `smtp_id` is `None`: `list(models.SMTP)`
 
 #### gophish.api.smtp.post\(smtp\)
@@ -121,6 +120,4 @@ smtp.ignore_cert_errors = True
 smtp = api.smtp.post(smtp)
 print smtp.id
 ```
-
-
 

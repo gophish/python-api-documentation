@@ -1,4 +1,4 @@
-# Gophish Python API Client
+# Introduction
 
 Gophish was built from the ground-up to be API-first. This means that we build out the API endpoints for all of our features, and the UI is simply a wrapper around these endpoints.
 
@@ -26,3 +26,4 @@ api = Gophish(api_key)
 ```
 
 Now you're ready to start using the API!
+

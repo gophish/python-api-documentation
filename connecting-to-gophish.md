@@ -26,5 +26,3 @@ from gophish import Gophish
 api = Gophish(API_KEY, host='https://admin_server', verify=False)
 ```
 
-
-

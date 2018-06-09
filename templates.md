@@ -1,4 +1,4 @@
-#Templates
+# Templates
 
 Templates are the emails that are sent out by Gophish during a campaign.
 
@@ -6,16 +6,16 @@ The templates endpoint allows you to create, view, and manage Gophish templates.
 
 ## Table of Contents
 
-* [Quick Example](#quick-example)
-* [Models](#models)
-* [Methods](#methods)
-* [Examples](#examples)
+* [Quick Example](templates.md#quick-example)
+* [Models](templates.md#models)
+* [Methods](templates.md#methods)
+* [Examples](templates.md#examples)
 
 ## Quick Example
 
 This example shows how to retrieve the name of every template in Gophish.
 
-``` python
+```python
 from gophish import Gophish
 
 api_key = 'API_KEY'
@@ -29,19 +29,19 @@ for template in api.templates.get():
 
 #### gophish.models.Attachment
 
-##### Attributes
+**Attributes**
 
-* `content` (str) The base64 encoded attachment content
-* `type` (str) The content type of the attachment
-* `name` (str) The attachment filename
+* `content` \(str\) The base64 encoded attachment content
+* `type` \(str\) The content type of the attachment
+* `name` \(str\) The attachment filename
 
-##### Methods
+**Methods**
 
 * `__init__(self, **kwargs)` - Returns a new Attachment
 
 Example:
 
-``` python
+```python
 todo
 ```
 
@@ -49,22 +49,22 @@ todo
 
 A template contains a name and the email content.
 
-##### Attributes
+**Attributes**
 
-* `id` (int) The template ID
-* `name` (str) The template name
-* `html` (str) The template HTML
-* `text` (str) The template HTML
-* `modified_date` (optional: datetime.datetime) The scheduled time for template launch
-* `attachments` (list(models.Attachment)) The optional email attachments
+* `id` \(int\) The template ID
+* `name` \(str\) The template name
+* `html` \(str\) The template HTML
+* `text` \(str\) The template HTML
+* `modified_date` \(optional: datetime.datetime\) The scheduled time for template launch
+* `attachments` \(list\(models.Attachment\)\) The optional email attachments
 
-##### Methods
+**Methods**
 
 * `__init__(self, **kwargs)` - Returns a new Template
 
 Example:
 
-``` python
+```python
 from gophish.models import *
 
 template = Template(name='Test Template',
@@ -73,7 +73,7 @@ html="<html><body>Click <a href="{{.URL}}">here</a></body></html>)
 
 ### Methods
 
-#### gophish.api.templates.get(template_id=None)
+#### gophish.api.templates.get\(template\_id=None\)
 
 Gets the details for one or more templates. To get a particular template, set the ID to the template ID.
 
@@ -82,10 +82,9 @@ If the `template_id` is not set, all templates owned by the current user will be
 **Returns**
 
 * If the `template` is set: `models.Template`
-
 * If `template_id` is `None`: `list(models.Template)`
 
-#### gophish.api.templates.post(template)
+#### gophish.api.templates.post\(template\)
 
 Creates a new template. This endpoint requires you to submit a `gophish.models.Template` object.
 
@@ -93,7 +92,7 @@ Creates a new template. This endpoint requires you to submit a `gophish.models.T
 
 The `gophish.models.Template` object that was created.
 
-#### gophish.api.templates.put(template)
+#### gophish.api.templates.put\(template\)
 
 Edits an existing template. This endpoint requires you to submit an existing `gophish.models.Template` object with its `id` attribute set correctly.
 
@@ -101,7 +100,7 @@ Edits an existing template. This endpoint requires you to submit an existing `go
 
 The `gophish.models.Template` object that was edited.
 
-#### gophish.api.templates.delete(template_id)
+#### gophish.api.templates.delete\(template\_id\)
 
 Deletes the template specified by `template_id`.
 
@@ -115,7 +114,7 @@ Here are some examples to show how to use the API.
 
 All of these examples assume the following setup:
 
-``` python
+```python
 from gophish import Gophish
 from gophish.models import *
 
@@ -125,22 +124,23 @@ api = Gophish(api_key)
 
 #### Get All Templates
 
-``` python
+```python
 templates = api.templates.get()
 ```
 
 #### Get Single Template
 
-``` python
+```python
 template = api.templates.get(template_id=1)
 ```
 
 #### Create New Template
 
-``` python
+```python
 template = Template(name='Test Template',
 html="<html><body>Click <a href="{{.URL}}">here</a></body></html>)
 
 template = api.templates.post(template)
 print template.id
 ```
+

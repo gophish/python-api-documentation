@@ -4,10 +4,10 @@ The campaigns endpoint allows you to create, view, and manage Gophish campaigns.
 
 ## Table of Contents
 
-* [Quick Example](#quick-example)
-* [Models](#models)
-* [Methods](#methods)
-* [Examples](#examples)
+* [Quick Example](campaigns.md#quick-example)
+* [Models](campaigns.md#models)
+* [Methods](campaigns.md#methods)
+* [Examples](campaigns.md#examples)
 
 ## Quick Example
 
@@ -27,7 +27,7 @@ for campaign in api.campaigns.get():
 
 #### gophish.models.Result
 
-##### Attributes
+**Attributes**
 
 * `id` \(int\) The result ID
 * `first_name` \(str\) The first name
@@ -38,7 +38,7 @@ for campaign in api.campaigns.get():
 * `latitude` \(float\) The latitude of the `ip`
 * `longitude` \(float\) The longitude of the `ip`
 
-##### Methods
+**Methods**
 
 * `__init__(self, **kwargs)` - Returns a new Result
 
@@ -52,11 +52,11 @@ for campaign in api.campaigns.get():
 
 #### gophish.models.Campaign
 
-For each of the attributes in the campaign \(groups, template, page, etc.\), Gophish **only cares about the **`name`.
+For each of the attributes in the campaign \(groups, template, page, etc.\), Gophish **only cares about the** `name`.
 
 This means that you don't have to fetch the resources you want to use. You can simply create new ones with the correct name for the campaign \(see the example below\).
 
-##### Attributes
+**Attributes**
 
 * `id` \(int\) The result ID
 * `results` \(list\(models.Result\)\) The campaign results
@@ -70,7 +70,7 @@ This means that you don't have to fetch the resources you want to use. You can s
 * `smtp` \(models.SMTP\) The SMTP Profile to use when sending emails
 * `url` \(str\) The URL to use when constructing links in phishing emails
 
-##### Methods
+**Methods**
 
 * `__init__(self, **kwargs)` - Returns a new Campaign
 
@@ -94,7 +94,7 @@ Statistics for a campaign's results.
 
 The Gophish API never requires you to create campaign stats. Instead, they are returned as part of the campaign summary objects.
 
-##### Attributes
+**Attributes**
 
 * `total` \(int\) The total number of targets in the campaign
 * `sent` \(int\) The number of emails that were successfully sent
@@ -109,7 +109,7 @@ A summarized view of a campaign. This is a lightweight high level view of campai
 
 The Gophish API never requires you to create campaign summaries. Instead, they are returned when hitting the campaign summary endpoint.
 
-##### Attributes
+**Attributes**
 
 * `id` \(int\) The result ID
 * `name` \(str\) The campaign name
@@ -118,13 +118,13 @@ The Gophish API never requires you to create campaign summaries. Instead, they a
 * `status` \(str\) The current status of the campaign
 * `stats` \(list\(models.Stat\)\) The stats of campaign results
 
-##### Methods
+**Methods**
 
 * `__init__(self, **kwargs)` - Returns a new CampaignSummary
 
   Example:
 
-```py
+```python
 summary = api.campaigns.summary(campaign_id=1)
 print(summary.stats.as_dict())
 ```
@@ -140,7 +140,6 @@ If the `campaign_id` is not set, all campaigns owned by the current user will be
 **Returns**
 
 * If the `campaign_id` is set: `models.Campaign`
-
 * If `campaign_id` is `None`: `list(models.Campaign)`
 
 #### gophish.api.campaigns.post\(campaign\)
@@ -168,7 +167,6 @@ If the `campaign_id` is not set, the summary object for all campaigns owned by t
 **Returns**
 
 * If the `campaign_id` is set: `models.CampaignSummary`
-
 * If `campaign_id` is `None`: `models.CampaignSummaries`
 
 ### Examples
@@ -215,10 +213,8 @@ print campaign.id
 
 #### Get Campaign Summaries
 
-```
+```text
 summaries = api.campaigns.summary()
 summary = api.campaigns.summary(campaign_id=1)
 ```
-
-
 
