@@ -64,6 +64,7 @@ This means that you don't have to fetch the resources you want to use. You can s
 * `name` \(str\) The campaign name
 * `status` \(str\) The current status of the campaign
 * `created_date` \(optional: datetime.datetime\) The campaign creation date
+* `send_by_date` \(optional: datetime.datetime\) The date to send all emails by
 * `launch_date` \(optional: datetime.datetime\) The scheduled time for campaign launch
 * `template` \(models.Template\) The template to use in the campaign
 * `page` \(models.Page\) The Landing Page to use in the campaign
@@ -80,12 +81,12 @@ This means that you don't have to fetch the resources you want to use. You can s
 groups = [Group(name='Existing Group')]
 page = Page(name='Existing Page')
 template = Template(name='Existing Template')
-profile = SMTP(name='Existing Profile')
+smtp = SMTP(name='Existing Profile')
 url = 'http://phishing_server'
 
 campaign = Campaign(
     name='Example Campaign', groups=groups, page=page,
-    template=template, profile=profile)
+    template=template, smtp=smtp)
 ```
 
 #### gophish.models.Stat
@@ -114,6 +115,7 @@ The Gophish API never requires you to create campaign summaries. Instead, they a
 * `id` \(int\) The result ID
 * `name` \(str\) The campaign name
 * `created_date` \(optional: datetime.datetime\) The campaign creation date
+* `send_by_date` \(optional: datetime.datetime\) The date to send all emails by
 * `launch_date` \(optional: datetime.datetime\) The scheduled time for campaign launch
 * `status` \(str\) The current status of the campaign
 * `stats` \(list\(models.Stat\)\) The stats of campaign results
@@ -201,11 +203,11 @@ campaign = api.campaigns.get(campaign_id=1)
 groups = [Group(name='Existing Group')]
 page = Page(name='Existing Page')
 template = Template(name='Existing Template')
-profile = SMTP(name='Existing Profile')
+smtp = SMTP(name='Existing Profile')
 url = 'http://phishing_server'
 campaign = Campaign(
     name='Example Campaign', groups=groups, page=page,
-    template=template, profile=profile)
+    template=template, smtp=smtp)
 
 campaign = api.campaigns.post(campaign)
 print campaign.id
