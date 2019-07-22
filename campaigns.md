@@ -160,6 +160,14 @@ Deletes the campaign specified by `campaign_id`.
 
 A `gophish.models.Status` message.
 
+#### gophish.api.campaigns.complete\(campaign\_id\)
+
+Completes the campaign specified by `campaign_id`.
+
+**Returns**
+
+A `gophish.models.Status` message.
+
 #### gophish.api.campaigns.summary\(campaign\_id=None\)
 
 Gets the summaries for one or more campaigns. To get a particular campaign, set the ID to the campaign ID.
