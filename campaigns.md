@@ -62,6 +62,7 @@ This means that you don't have to fetch the resources you want to use. You can s
 * `results` \(list\(models.Result\)\) The campaign results
 * `timeline` \(list\(models.TimelineEntry\)\) The timeline entries
 * `name` \(str\) The campaign name
+* `description` \(str\) The campaign description
 * `status` \(str\) The current status of the campaign
 * `created_date` \(optional: datetime.datetime\) The campaign creation date
 * `send_by_date` \(optional: datetime.datetime\) The date to send all emails by
@@ -83,10 +84,11 @@ page = Page(name='Existing Page')
 template = Template(name='Existing Template')
 smtp = SMTP(name='Existing Profile')
 url = 'http://phishing_server'
+description = 'My first example campaign'
 
 campaign = Campaign(
     name='Example Campaign', groups=groups, page=page,
-    template=template, smtp=smtp)
+    template=template, smtp=smtp, url=url, description=description)
 ```
 
 #### gophish.models.Stat
@@ -215,7 +217,7 @@ smtp = SMTP(name='Existing Profile')
 url = 'http://phishing_server'
 campaign = Campaign(
     name='Example Campaign', groups=groups, page=page,
-    template=template, smtp=smtp)
+    template=template, smtp=smtp, url=url)
 
 campaign = api.campaigns.post(campaign)
 print campaign.id
