@@ -37,6 +37,7 @@ for campaign in api.campaigns.get():
 * `ip` \(str\) The last seen IP address
 * `latitude` \(float\) The latitude of the `ip`
 * `longitude` \(float\) The longitude of the `ip`
+* `status` \(str\) The users status in the campaign
 
 **Methods**
 
