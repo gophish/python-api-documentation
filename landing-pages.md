@@ -36,6 +36,7 @@ A page contains one or more `models.User` objects. The page name must be unique.
 * `id` \(int\) The page ID
 * `html` \(str\) The page HTML
 * `name` \(str\) The page name
+* `description` \(str\) The page description
 * `modified_date` \(optional: datetime.datetime\) The scheduled time for page launch
 * `capture_credentials` \(bool default:False\) Whether or not the landing page should capture credentials
 * `capture_passwords` \(bool default:False\) Whether or not the landing page should capture passwords

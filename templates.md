@@ -53,6 +53,7 @@ A template contains a name and the email content.
 
 * `id` \(int\) The template ID
 * `name` \(str\) The template name
+* `description` \(str\) The template description
 * `html` \(str\) The template HTML
 * `text` \(str\) The template HTML
 * `modified_date` \(optional: datetime.datetime\) The scheduled time for template launch
