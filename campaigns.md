@@ -103,6 +103,7 @@ The Gophish API never requires you to create campaign stats. Instead, they are r
 * `opened` \(int\) The number of emails that were opened
 * `clicked` \(int\) The number of emails that were clicked by recipients in the campaign
 * `submitted_data` \(int\) The number of captured credentials from the campaign
+* `email_reported` \(int\) The number of emails reported from the campaign
 * `error` \(int\) The number of errors when sending emails in the campaign
 
 #### gophish.models.CampaignSummary
